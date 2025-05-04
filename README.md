@@ -1,0 +1,1 @@
+Welcome to the Mini Python Projects repository — a large and expanding repository of small, beginner-to-intermediate level Python projects constructed to learn, practice, and demonstrate important programming concepts. All projects in this repo are brief, straightforward, and standalone — perfect for learning on the fly or testing.
