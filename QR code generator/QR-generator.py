@@ -7,11 +7,11 @@ root.title('QR Code Generator')
 
 def qr_generator():
     link = e.get()
-    qr = qrcode.QRCode(version=1,box_size=10,border=4)
+    qr = qrcode.QRCode(version=1,box_size=5,border=4)
     qr.add_data(link)
     qr.make()
     img = qr.make_image(fill_color = 'black',bg = 'white')
-    image.save('image.png')
+    img.save('image.png')
     qr_img = Image.open('image.png')
     qr_img = ImageTk.PhotoImage(qr_img)
 
@@ -25,6 +25,6 @@ gen_button = Button(root,text='Generate QR Code',padx=10,command=qr_generator)
 gen_button.grid(row=1,column=0,pady=5)
 
 img_label = Label(root)
-image_label.grid(row=2,column=0,pady=10)
+img_label.grid(row=2,column=0,pady=10)
 
 root.mainloop()
