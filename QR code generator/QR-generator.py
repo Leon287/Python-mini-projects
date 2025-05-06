@@ -1,8 +1,30 @@
 import qrcode
+from tkinter import *
+from PIL import Image, ImageTk
 
-website_link = input('Enter a website link: ')
-qr = qrcode.QRCode(version=1,box_size=5,border=4)
-qr.add_data(website_link)
-qr.make()
-img = qr.make_image(fill_color='black',back_color='white')
-img.save('website_qr.png') #you can set path where to store the image
+root = Tk()
+root.title('QR Code Generator')
+
+def qr_generator():
+    link = e.get()
+    qr = qrcode.QRCode(version=1,box_size=10,border=4)
+    qr.add_data(link)
+    qr.make()
+    img = qr.make_image(fill_color = 'black',bg = 'white')
+    image.save('image.png')
+    qr_img = Image.open('image.png')
+    qr_img = ImageTk.PhotoImage(qr_img)
+
+    img_label.config(image=qr_img)
+    img_label.image = qr_img
+
+
+e = Entry(root,width=50,borderwidth=5)
+e.grid(row=0,column=0,padx=10,pady=10)
+gen_button = Button(root,text='Generate QR Code',padx=10,command=qr_generator)
+gen_button.grid(row=1,column=0,pady=5)
+
+img_label = Label(root)
+image_label.grid(row=2,column=0,pady=10)
+
+root.mainloop()
