@@ -8,6 +8,9 @@ root.geometry("350x350")
 
 def qr_generator():
     link = e.get()
+    if not link:
+        return
+
     qr = qrcode.QRCode(version=1,box_size=5,border=4)
     qr.add_data(link)
     qr.make()
