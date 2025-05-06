@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 
 root = Tk()
 root.title('QR Code Generator')
+root.geometry("350x350")
 
 def qr_generator():
     link = e.get()
