@@ -1,6 +1,6 @@
 import qrcode
 
-website_link = 'https://imageio.readthedocs.io/en/stable/index.html' #Link of Python Imageio's documentation
+website_link = input('Enter a website link: ')
 qr = qrcode.QRCode(version=1,box_size=5,border=4)
 qr.add_data(website_link)
 qr.make()
