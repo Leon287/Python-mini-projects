@@ -12,9 +12,8 @@ def qr_generator():
     qr.add_data(link)
     qr.make()
     img = qr.make_image(fill_color = 'black',bg = 'white')
-    img.save('image.png')
-    qr_img = Image.open('image.png')
-    qr_img = ImageTk.PhotoImage(qr_img)
+
+    qr_img = ImageTk.PhotoImage(img)
 
     img_label.config(image=qr_img)
     img_label.image = qr_img
