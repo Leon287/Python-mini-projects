@@ -26,6 +26,14 @@ def button_subtract():
     f_num = int(first_number)
     e.delete(0,END)
 
+def button_multiply():
+    first_number = e.get()
+    global f_num
+    global math
+    math = "mul"
+    f_num = int(first_number)
+    e.delete(0,END)
+
 
 button_1 = Button(root,text=1,padx=40,pady=20,command=lambda: button_click(1))
 button_2 = Button(root,text=2,padx=40,pady=20,command=lambda: button_click(2))
