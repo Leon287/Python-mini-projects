@@ -10,6 +10,9 @@ def button_click(number):
     e.delete(0,END)
     e.insert(0,str(current) + str(number))
 
+def button_clear():
+    e.delete(0,END)
+
 def button_add():
     first_number = e.get()
     global f_num
@@ -53,7 +56,7 @@ button_8 = Button(root,text=8,padx=40,pady=20,command=lambda: button_click(8))
 button_9 = Button(root,text=9,padx=40,pady=20,command=lambda: button_click(9))
 button_0 = Button(root,text=0,padx=40,pady=20,command=lambda: button_click(0))
 button_add = Button(root,text='+',padx=39,pady=20,command=button_add)
-button_clear = Button(root,text='Clear',padx=29,pady=20)
+button_clear = Button(root,text='Clear',padx=29,pady=20,command=button_clear)
 button_equal = Button(root,text='=',padx=39,pady=20)
 button_subtract = Button(root,text='-',padx=40,pady=20,command=button_subtract)
 button_multiply = Button(root,text='*',padx=40,pady=20,command=button_multiply)
