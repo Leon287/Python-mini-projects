@@ -10,6 +10,14 @@ def button_click(number):
     e.delete(0,END)
     e.insert(0,str(current) + str(number))
 
+def button_add():
+    first_number = e.get()
+    global f_num
+    global math
+    math = "addition"
+    f_num = int(first_number)
+    e.delete(0,END)
+
 
 button_1 = Button(root,text=1,padx=40,pady=20,command=lambda: button_click(1))
 button_2 = Button(root,text=2,padx=40,pady=20,command=lambda: button_click(2))
