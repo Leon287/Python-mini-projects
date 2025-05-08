@@ -2,11 +2,12 @@ import datetime as dt
 import requests
 from dotenv import load_dotenv
 import os
-
+# use .env file to store your API key
 # Load environment variables
 load_dotenv()
 
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
+#Load the API KEY securely from env file (from the environment)
 API_KEY = os.getenv('api_key')
 CITY = "London"
 
