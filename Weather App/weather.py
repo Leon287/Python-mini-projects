@@ -29,12 +29,17 @@ huimidity = response['main']['humidity']
 description = response['weather'][0]['description']
 sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
 sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
-wind_speed = response['wind']['speed']
+wind_speed_in_mpers = response['wind']['speed']
+wind_speed_in_kmperh = wind_speed_in_mpers * 3.6
+pressure = response['main']['pressure']
+visibility = response['visibility']
 
 print(f"Temperature in {CITY}: {temp_celsius:.2f}°C or {temp_farenheit:.2f}°F")
 print(f"Temperature in {CITY} feels like: {feels_like_celsius:.2f}°C or {feels_like_fahrenheit:.2f}°F")
 print(f"Humidity in {CITY}: {huimidity}%")
-print(f"Wind speed in {CITY}: {wind_speed}m/s")
+print(f"Wind speed in {CITY}: {wind_speed_in_kmperh:.2f}km/hr")
 print(f"General Weather in {CITY}: {description}")
 print(f"Sunrise in {CITY} at {sunrise_time}")
 print(f"Sunset in {CITY} at {sunset_time}")
+print(f"Pressure in {CITY}: {pressure} mb") #Pressure is in millibar
+print(f"Visibility in {CITY}: {visibility/1000:.2f} km") 
