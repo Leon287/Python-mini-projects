@@ -13,16 +13,19 @@ if not BASE_URL:
 def generate_blog(paragraph_topic):
     prompt = f"Write a paragraph about the following topic: {paragraph_topic}"
 
-    response = requests.post(
-        BASE_URL,
-        json={
-            "model": "llama3",
-            "prompt": prompt,
-            "stream": False 
-        }
-    )
-    data = response.json()
-    return data['response']
+    try:
+        response = requests.post(
+            BASE_URL,
+            json={
+                "model": "llama3",
+                "prompt": prompt,
+                "stream": False 
+            }
+        )
+        data = response.json()
+        return data['response']
+    except requests.RequestException as e:
+        return f"Error communication with LLM API: {e}"
 
 print(generate_blog('Why meditation is important?'))
 
