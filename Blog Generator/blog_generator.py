@@ -1,11 +1,20 @@
 # A simple blog generator using llama3
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+BASE_URL = os.getenv('llm_api_url')
+
+if not BASE_URL:
+    raise ValueError("API URL not found. Please set 'llm_api_url' in your .env file.")
 
 def generate_blog(paragraph_topic):
     prompt = f"Write a paragraph about the following topic: {paragraph_topic}"
 
     response = requests.post(
-        'http://localhost:11434/api/generate',
+        BASE_URL,
         json={
             "model": "llama3",
             "prompt": prompt,
