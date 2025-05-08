@@ -9,7 +9,7 @@ load_dotenv()
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 #Load the API KEY securely from env file (from the environment)
 API_KEY = os.getenv('api_key')
-CITY = "London"
+CITY = input("Enter City: ")
 
 def kelvin_to_celsiuse_fahrenheit(kelvin):
     celsius = kelvin - 273.15
