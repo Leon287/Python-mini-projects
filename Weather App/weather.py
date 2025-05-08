@@ -30,3 +30,10 @@ sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + respons
 sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
 wind_speed = response['wind']['speed']
 
+print(f"Temperature in {CITY}: {temp_celsius:.2f}°C or {temp_farenheit:.2f}°F")
+print(f"Temperature in {CITY} feels like: {feels_like_celsius:.2f}°C or {feels_like_fahrenheit:.2f}°F")
+print(f"Humidity in {CITY}: {huimidity}%")
+print(f"Wind speed in {CITY}: {wind_speed}m/s")
+print(f"General Weather in {CITY}: {description}")
+print(f"Sunrise in {CITY} at {sunrise_time}")
+print(f"Sunset in {CITY} at {sunset_time}")
