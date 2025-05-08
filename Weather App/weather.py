@@ -14,8 +14,7 @@ CITY = "London"
 url = f"{BASE_URL}appid={API_KEY}&q={CITY}"
 
 # Make the request and print the response
-response = requests.get(url)
-data = response.json()
+response = requests.get(url).json()
 
-print(data)
+print(response)
 
