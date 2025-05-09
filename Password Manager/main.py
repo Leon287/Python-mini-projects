@@ -40,3 +40,10 @@ class PasswordManager:
     
     def get_password(self,site):
         return self.password_dict[site]
+    
+def main():
+    password = {
+        "email" : "324234",
+        "Youtube": "sdaasd32",
+        "Google" : "dfjnsjdw4w43"
+    }
