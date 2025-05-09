@@ -36,7 +36,7 @@ class PasswordManager:
         if self.password_file is not None:
             with open(self.password_file,'a+') as f:
                 encrypted = Fernet(self.key).encrypt(password.encode())
-                f.write(site + ":" + encrypted.decode + "\n")
+                f.write(site + ":" + encrypted.decode() + "\n")
     
     def get_password(self,site):
         return self.password_dict[site]
@@ -88,3 +88,6 @@ def main():
             print("Bye")
         else:
             print("Invalid Choice")
+
+if __name__ == "__main__":
+    main()
