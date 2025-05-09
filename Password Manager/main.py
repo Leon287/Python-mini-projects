@@ -37,3 +37,6 @@ class PasswordManager:
             with open(self.password_file,'a+') as f:
                 encrypted = Fernet(self.key).encrypt(password.encode())
                 f.write(site + ":" + encrypted.decode + "\n")
+    
+    def get_password(self,site):
+        return self.password_dict[site]
