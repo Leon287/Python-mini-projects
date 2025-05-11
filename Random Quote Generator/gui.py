@@ -23,7 +23,7 @@ quote_text.set("Click the button to get a quote!")
 quote_label = tk.Label(root, textvariable=quote_text, justify="center", font=("Comic Sans MS",12),wraplength=350)
 quote_label.pack(pady=40)
 
-get_quote_button = tk.Button(root, text="Get Quote", command=show_quote(), font=("Comic Sans MS",12))
+get_quote_button = tk.Button(root, text="Get Quote", command=show_quote, font=("Comic Sans MS",12))
 get_quote_button.pack()
 
 
