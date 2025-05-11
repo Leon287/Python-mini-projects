@@ -5,7 +5,7 @@ def get_quote():
     try:
         response = requests.get("https://zenquotes.io/api/random")
         data = response.json()
-        return (f"{data[0]['q']} - {data[0]['a']}")
+        return (f"{data[0]['q']} \n\t\t  - {data[0]['a']}")
     except Exception as e:
         return "Could not fetch a quote. Please try again later."
     
