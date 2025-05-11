@@ -1,6 +1,6 @@
 import requests
 
-response = requests.get("https://api.quotable.io/random")
+response = requests.get("https://zenquotes.io/api/random")
 
 data = response.json()
-print(f"{data['content']} - {data['author']}")
+print(f"{data[0]['q']} - {data[0]['a']}")
