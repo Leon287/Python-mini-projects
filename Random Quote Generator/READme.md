@@ -1,6 +1,6 @@
 Simple Quote Generator in Python
 
-A lightweight Python app that fetches random quotes from an API and displays them using a user-friendly GUI built with `tkinter`. Optionally, it includes the ability to export the displayed quote as an image with a background.
+A lightweight Python app that fetches random quotes from an API and displays them using a user-friendly GUI built with 'tkinter'. Optionally, it includes the ability to export the displayed quote as an image with a background.
 
 Features
 
