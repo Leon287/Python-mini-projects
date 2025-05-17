@@ -13,14 +13,14 @@ class TypeSpeddGUI:
 
         self.frame = tk.Frame(self.root)
 
-        self.sample_label = tk.label(self.frame, text=random.choice(self.texts),font=("Helvetica",18))
+        self.sample_label = tk.Label(self.frame, text=random.choice(self.texts),font=("Helvetica",12))
         self.sample_label.grid(row=0 , column=0 ,columnspan=2 , padx=5,pady=10)
 
-        self.input_entry = tk.Entry(self.frame,width=40, font=("Helvetica",24))
+        self.input_entry = tk.Entry(self.frame,width=40, font=("Helvetica",16))
         self.input_entry.grid(row=1, column=0, columnspan=2,padx=5,pady=10)
         self.input_entry.bind("<KeyPress>",self.start)
 
-        self.speed_label = tk.label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM",font=("Helvetica",18))
+        self.speed_label = tk.Label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM",font=("Helvetica",12))
         self.speed_label.grid(row=2 , column=0 ,columnspan=2 , padx=5,pady=10)     
 
         self.reset_button = tk.Button(self.frame, text="Reset", command=self.reset)
