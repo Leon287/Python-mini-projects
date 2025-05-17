@@ -33,8 +33,19 @@ class TypeSpeddGUI:
 
         self.root.mainloop()
 
-    def start(self):
-        pass
+    def start(self, event):
+        if not self.running:
+            if not event.keycode in [16,1,18]:
+                self.running = True
+                t = threading.Thread(target=self.time_thread)
+                t.start()
+        if not self.sample_label.cget('text') == self.input_entry.get():
+            self.input_entry.config(fg = "red")
+        else:
+            self.input_entry.config(fg="black")
+        if self.input_entry.get() == self.sample_label.cget('text')[:-1]:
+            self.running = False
+            self.input_entry.config(fg="green")
 
     def time_thread(self):
         while self.running:
@@ -46,3 +57,4 @@ class TypeSpeddGUI:
 
     def reset(self):
         pass
+
