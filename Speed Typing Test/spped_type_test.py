@@ -36,5 +36,8 @@ class TypeSpeddGUI:
     def start(self):
         pass
 
+    def time_thread(self):
+        pass
+
     def reset(self):
         pass
