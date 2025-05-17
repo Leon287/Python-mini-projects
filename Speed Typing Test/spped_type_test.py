@@ -18,7 +18,7 @@ class TypeSpeddGUI:
 
         self.input_entry = tk.Entry(self.frame,width=40, font=("Helvetica",16))
         self.input_entry.grid(row=1, column=0, columnspan=2,padx=5,pady=10)
-        self.input_entry.bind("<KeyPress>",self.start)
+        self.input_entry.bind("<KeyRelease>",self.start)
 
         self.speed_label = tk.Label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM\n0.00 WPS\n0.00 WPM",font=("Helvetica",12))
         self.speed_label.grid(row=2 , column=0 ,columnspan=2 , padx=5,pady=10)     
@@ -43,7 +43,7 @@ class TypeSpeddGUI:
             self.input_entry.config(fg = "red")
         else:
             self.input_entry.config(fg="black")
-        if self.input_entry.get() == self.sample_label.cget('text')[:-1]:
+        if self.input_entry.get() == self.sample_label.cget('text'):
             self.running = False
             self.input_entry.config(fg="green")
 
