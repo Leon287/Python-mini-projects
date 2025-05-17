@@ -29,7 +29,7 @@ class TypeSpeddGUI:
         self.frame.pack(expand=True)
 
         self.counter = 0
-        self.started = False
+        self.running = False
 
         self.root.mainloop()
 
@@ -37,7 +37,12 @@ class TypeSpeddGUI:
         pass
 
     def time_thread(self):
-        pass
+        while self.running:
+            time.sleep(0.1)
+            self.counter += 0.1
+            cps = len(self.input_entry.get()) / self.counter
+            cpm = cps * 60
+            self.speed_label.config(text=f"Speed: \n{cps:.2f} CPS\n{cpm:.2f} CPM")
 
     def reset(self):
         pass
