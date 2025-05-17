@@ -20,10 +20,10 @@ class TypeSpeddGUI:
         self.input_entry.grid(row=1, column=0, columnspan=2,padx=5,pady=10)
         self.input_entry.bind("<KeyPress>",self.start)
 
-        self.speed_label = tk.Label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM",font=("Helvetica",12))
+        self.speed_label = tk.Label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM\n0.00 WPS\n0.00 WPM",font=("Helvetica",12))
         self.speed_label.grid(row=2 , column=0 ,columnspan=2 , padx=5,pady=10)     
 
-        self.reset_button = tk.Button(self.frame, text="Reset", command=self.reset)
+        self.reset_button = tk.Button(self.frame, text="Reset", command=self.reset, font=("Helvetica",12))
         self.reset_button.grid(row=3 , column=0 ,columnspan=2 , padx=5,pady=10) 
 
         self.frame.pack(expand=True)
@@ -53,12 +53,14 @@ class TypeSpeddGUI:
             self.counter += 0.1
             cps = len(self.input_entry.get()) / self.counter
             cpm = cps * 60
-            self.speed_label.config(text=f"Speed: \n{cps:.2f} CPS\n{cpm:.2f} CPM")
+            wps = len(self.input_entry.get().split(" ")) / self.counter
+            wpm = wps * 60
+            self.speed_label.config(text=f"Speed: \n{cps:.2f} CPS\n{cpm:.2f} CPM\n {wps:.2f}WPS\n{wpm:.2f} WPM")
 
     def reset(self):
         self.running = False
         self.counter = 0
-        self.speed_label.config(text="Speed: \n0.00 CPS\n0.00 CPM")
+        self.speed_label.config(text="Speed: \n0.00 CPS\n0.00 CPM\n0.00 WPS\n0.00 WPM")
         self.sample_label.config(text=random.choice(self.texts))
         self.input_entry.delete(0, tk.END)
 
