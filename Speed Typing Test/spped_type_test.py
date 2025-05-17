@@ -9,7 +9,7 @@ class TypeSpeddGUI:
         self.root.title('Typing Speed Calculator')
         self.root.geometry("800x600")
 
-        self.texts = open("texts.txt","r").read().split("\n")
+        self.texts = open("C:\\mydataaaa\\workspace\\Python\\Codedex\\Codedex-repo\\Speed Typing Test\\texts.txt","r").read().split("\n")
 
         self.frame = tk.Frame(self.root)
 
@@ -18,7 +18,7 @@ class TypeSpeddGUI:
 
         self.input_entry = tk.Entry(self.frame,width=40, font=("Helvetica",24))
         self.input_entry.grid(row=1, column=0, columnspan=2,padx=5,pady=10)
-        self.input_entry.bind("<KeyDown>",self.start)
+        self.input_entry.bind("<KeyPress>",self.start)
 
         self.speed_label = tk.label(self.frame, text="Speed: \n0.00 CPS\n0.00 CPM",font=("Helvetica",18))
         self.speed_label.grid(row=2 , column=0 ,columnspan=2 , padx=5,pady=10)     
@@ -57,4 +57,6 @@ class TypeSpeddGUI:
 
     def reset(self):
         pass
+
+TypeSpeddGUI()
 
