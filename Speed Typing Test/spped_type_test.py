@@ -3,7 +3,7 @@ import time
 import threading
 import random
 
-class TypeSpeddGUI:
+class TypeSpeedGUI:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title('Typing Speed Calculator')
@@ -64,5 +64,5 @@ class TypeSpeddGUI:
         self.sample_label.config(text=random.choice(self.texts))
         self.input_entry.delete(0, tk.END)
 
-TypeSpeddGUI()
+TypeSpeedGUI()
 
