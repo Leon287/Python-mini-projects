@@ -32,4 +32,9 @@ class TypeSpeddGUI:
         self.started = False
 
         self.root.mainloop()
-        
+
+    def start(self):
+        pass
+
+    def reset(self):
+        pass
