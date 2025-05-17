@@ -39,7 +39,7 @@ class TypeSpeddGUI:
                 self.running = True
                 t = threading.Thread(target=self.time_thread)
                 t.start()
-        if not self.sample_label.cget('text') == self.input_entry.get():
+        if not self.sample_label.cget('text').startswith(self.input_entry.get()):
             self.input_entry.config(fg = "red")
         else:
             self.input_entry.config(fg="black")
@@ -56,7 +56,11 @@ class TypeSpeddGUI:
             self.speed_label.config(text=f"Speed: \n{cps:.2f} CPS\n{cpm:.2f} CPM")
 
     def reset(self):
-        pass
+        self.running = False
+        self.counter = 0
+        self.speed_label.config(text="Speed: \n0.00 CPS\n0.00 CPM")
+        self.sample_label.config(text=random.choice(self.texts))
+        self.input_entry.delete(0, tk.END)
 
 TypeSpeddGUI()
 
