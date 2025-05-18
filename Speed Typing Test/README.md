@@ -8,3 +8,15 @@ Real-time typing accuracy highlighting (green for correct, red for incorrect)
 Live speed tracking (CPS, CPM, WPS, WPM)
 Reset functionality for new attempts
 Clean and responsive `tkinter` GUI
+
+How to Run
+
+1. Clone this repository or download the source code.
+
+2. Make sure you have Python installed (>= 3.6).
+
+3. Add your typing texts to the `texts.txt` file (one sentence per line).
+
+4. Update the path to `texts.txt` in the code if needed:
+   ```python
+   self.texts = open("path/to/your/texts.txt", "r").read().split("\n")
